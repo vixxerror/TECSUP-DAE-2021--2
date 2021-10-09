@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+<br />
+{% block content %}
+<div class="col-lg-3">
+	<h1 class="my-4">{{categoria}}</h1>
+	<div class="list-group"></div>
+</div>
+<div class="row">
+	{% for producto in productos %}
+    <h2></h2>
+	<div class="col-lg-4 col-md-6 mb-4">
+		<div class="card h-100">
+			<a href="#"
+				><img class="card-img-top" src="{{ producto.imagen.url }}" alt=""
+			/></a>
+			<div class="card-body">
+				<h4 class="card-title">
+					<a href="/tienda/producto/{{prod.id}}">{{producto.nombre}}</a>
+				</h4>
+				<h5>S/. {{producto.precio}}</h5>
+				<p class="card-text">Categoria: {{producto.categoria.nombre}}</p>
+			</div>
+			<div class="card-footer">
+				<small class="text-muted"
+					>&#9733; &#9733; &#9733; &#9733; &#9734;</small
+				>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}
